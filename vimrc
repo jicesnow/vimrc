@@ -1,7 +1,8 @@
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 "pathogen插件
-filetype plugin indent on
+"filetype plugin indent on
 "开启插件
 set nocompatible
 "不兼容vi模式
