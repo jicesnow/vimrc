@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/lion3206/Downloads/lovelove1bz'
 let g:netrw_dirhist_2='/private/etc'
 let g:netrw_dirhist_3='/Applications/XAMPP/xamppfiles/htdocs'
+let g:netrw_dirhist_4='/Users/lion3206/Dropbox/backup'
+let g:netrw_dirhist_5='/Users/lion3206/Documents'
+let g:netrw_dirhist_6='/Users/lion3206/Downloads'
+let g:netrw_dirhist_7='/Users/lion3206/Dropbox/veer'
+let g:netrw_dirhist_8='/Users/lion3206/Downloads'
