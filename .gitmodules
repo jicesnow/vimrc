@@ -10,3 +10,9 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/ultrablog"]
+	path = bundle/ultrablog
+	url = https://github.com/xbot/UltraBlog.vim.git
+[submodule "bundle/nerd-tree"]
+	path = bundle/nerd-tree
+	url = https://github.com/scrooloose/nerdtree.git
