@@ -78,6 +78,11 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 let g:use_zen_complete_tag = 1
 "调用zencomplete－vim插件
 
+"Markdown language syntax settings
+  augroup mkd
+    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  augroup END
+
 "ultrablog-vim插件
 let ub_blog = {'login_name':'icesnow',
             \'password':'621726',
