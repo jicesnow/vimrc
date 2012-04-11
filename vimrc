@@ -75,17 +75,41 @@ colorscheme molokai
 "设置macvim窗口大小
 autocmd! bufwritepost .vimrc source ~/.vimrc
 "定义了一个自动命令，每次写入.vimrc后，都会执行这个自动命令，source一次~/.vimrc文件
+
+"屏蔽箭头键使用
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+"调用zencoding-vim插件
 let g:use_zen_complete_tag = 1
-"调用zencomplete－vim插件
 
 "Markdown language syntax settings
   augroup mkd
     autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
   augroup END
 
+"NERD Tree插件
+let NERDChristmasTree=1 "让nerdtree漂亮点
+let NERDTreeBookmarksFile='~\.vim\Data\NerdBookmarks' "指定书签文件
+let NERDTreeMouseMode=2 "单击打开目录 双击打开文件
+let NERDTreeShowBookmarks=1 "默认显示书签列表
+let NERDTreeShowFiles=1  "默认显示文件
+let NERDTreeShowHidden=0  "默认不显示隐藏文件，1为显示
+let NERDTreeShowLineNumbers=1  "默认显示行号
+let NERDTreeWinPos='left'  "窗口位置
+let NERDTreeWinSize=25   "窗口宽
+nnoremap <silent><leader>nn :NERDTreeToggle<CR>
+"映射\nn为NERDTreeToggle快捷键，普通模式下文件窗口有效
+
 "ultrablog-vim插件
-let ub_blog = {'login_name':'icesnow',
-            \'password':'621726',
+let ub_blog = {'login_name':'',
+            \'password':'',
             \'url':'http://evsseny.appspot.com/',
             \'db':'~/.vim/UltraBlog.db'
             \}
