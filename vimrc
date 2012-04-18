@@ -108,9 +108,9 @@ nnoremap <silent><leader>nn :NERDTreeToggle<CR>
 "映射\nn为NERDTreeToggle快捷键，普通模式下文件窗口有效
 
 "ultrablog-vim插件
-let ub_blog = {'login_name':'',
-            \'password':'',
-            \'url':'http://evsseny.appspot.com/',
+let ub_blog = {'login_name':'icesnow',
+            \'password':'621726',
+            \'url':'http://evsseny.appspot.com/rpc',
             \'db':'~/.vim/UltraBlog.db'
             \}
  
@@ -161,3 +161,8 @@ let ub_tmpl_img_url="markdown###![$(file)s][]\n[$(file)s]:%(url)s"
  
 " Set the default template to use when previewing posts/pages locally
 let ub_default_template="default"
+
+"UltraBlog.vim
+if filereadable($HOME . '/.UltraBlog.vim.conf')
+    source $HOME/.UltraBlog.vim.conf
+endif
