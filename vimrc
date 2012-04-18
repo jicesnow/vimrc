@@ -108,8 +108,8 @@ nnoremap <silent><leader>nn :NERDTreeToggle<CR>
 "映射\nn为NERDTreeToggle快捷键，普通模式下文件窗口有效
 
 "ultrablog-vim插件
-let ub_blog = {'login_name':'icesnow',
-            \'password':'621726',
+let ub_blog = {'login_name':'',
+            \'password':'',
             \'url':'http://evsseny.appspot.com/rpc',
             \'db':'~/.vim/UltraBlog.db'
             \}
