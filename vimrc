@@ -166,3 +166,17 @@ let ub_default_template="default"
 if filereadable($HOME . '/.UltraBlog.vim.conf')
     source $HOME/.UltraBlog.vim.conf
 endif
+
+"neocomplacache插件
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_manual_completion_start_length=3
+let g:neocomplcache_enable_ignore_case=1
+let g:neocomplcache_lock_buffer_name_pattern='\*ku\*'
+let g:neocomplcache_max_list=100
+let g:neocomplcache_enable_auto_select = 1
+imap <expr><c-y> neocomplcache#close_popup()
+imap <expr><C-e> neocomplcache#cancel_popup()
