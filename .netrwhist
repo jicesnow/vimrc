@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/lion3206/octopress'
 let g:netrw_dirhist_2='/Users/lion3206/octopress/source/_includes/custom/asides'
 let g:netrw_dirhist_3='/Users/lion3206/octopress/source/_layouts'
 let g:netrw_dirhist_4='/Users/lion3206/.vim'
+let g:netrw_dirhist_5='/Users/lion3206/nav/_site'
+let g:netrw_dirhist_6='/Users/lion3206/nav'
+let g:netrw_dirhist_7='/Users/lion3206'

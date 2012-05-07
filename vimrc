@@ -107,66 +107,6 @@ let NERDTreeWinSize=25   "窗口宽
 nnoremap <silent><leader>nn :NERDTreeToggle<CR>
 "映射\nn为NERDTreeToggle快捷键，普通模式下文件窗口有效
 
-"ultrablog-vim插件
-let ub_blog = {'login_name':'',
-            \'password':'',
-            \'url':'http://evsseny.appspot.com/rpc',
-            \'db':'~/.vim/UltraBlog.db'
-            \}
- 
-" Default page size of local post list, see :help ub_local_pagesize for more information
-let ub_local_pagesize = 30
- 
-" Default page size of remote post list, see :help ub_remote_pagesize for more information
-let ub_remote_pagesize = 15
- 
-" Default page size of search result list, see :help ub_search_pagesize for more information
-let ub_search_pagesize = 30
- 
-" Proudly show your visitors that you are blogging with the world's most powerful editor
-let ub_append_promotion_link = 1
- 
-" Set width of the local id column in post or page lists
-let ub_list_col1_width = 7
- 
-" Set width of the remote id column in post or page lists
-let ub_list_col2_width = 8
- 
-" Set width of the status column in post or page lists
-let ub_list_col3_width = 11
- 
-" Set this value to 1 if you want to use editor mode.
-let ub_editor_mode = 0
- 
-" Set this value to 1 if you want to save posts/pages immediately after they are fetched from the blog.
-let ub_save_after_opened = 0
- 
-" Set this value to 0 if you do not want to save posts/pages immediately after they are sent to the blog.
-let ub_save_after_sent = 1
- 
-" Set the following options to use a custom extenal command as the converter.
-let ub_converter_command = 'pandoc'
-let ub_converter_options = ['--reference-links']
-let ub_converter_option_from = '--from=%s'
-let ub_converter_option_to = '--to=%s'
- 
-" Customize hotkeys
-let ub_hotkey_open_item_in_current_view='<enter>'
-let ub_hotkey_open_item_in_splitted_view='<s-enter>'
-let ub_hotkey_open_item_in_tabbed_view='<c-enter>'
-let ub_hotkey_delete_item='<del>'
- 
-" Set the link template string for images uploaded by :UBUpload
-let ub_tmpl_img_url="markdown###![$(file)s][]\n[$(file)s]:%(url)s"
- 
-" Set the default template to use when previewing posts/pages locally
-let ub_default_template="default"
-
-"UltraBlog.vim
-if filereadable($HOME . '/.UltraBlog.vim.conf')
-    source $HOME/.UltraBlog.vim.conf
-endif
-
 "neocomplacache插件
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
