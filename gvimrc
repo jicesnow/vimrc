@@ -1,11 +1,125 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-"pathogen插件
-"filetype plugin indent on
-"开启插件
-set nocompatible
-"不兼容vi模式
+set nocompatible  
+"设置 vim 为不兼容vi模式
+filetype off      
+"必须的
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+ 
+"让 Vundle 管理 Vundle
+"必须的
+Bundle 'gmarik/vundle'
+ 
+" 不同代码源上的vim插件的安装和管理方法
+"
+" 代码源在github上的
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-rails.git'
+" 代码源在vim-scripts上的
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" 代码源放在其他地方的
+" Bundle 'git://git.wincent.com/command-t.git'
+" ...
+ 
+"------------------
+" Code Completions
+"------------------
+Bundle 'Shougo/neocomplcache'
+Bundle 'garbas/vim-snipmate'
+Bundle 'ervandew/supertab'
+Bundle 'honza/snipmate-snippets'
+Bundle 'mattn/zencoding-vim'
+" snipmate dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
+"-----------------
+" Fast navigation
+"-----------------
+Bundle 'tsaleh/vim-matchit'
+Bundle 'Lokaltog/vim-easymotion'
+
+"--------------
+" Fast editing
+"--------------
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'sjl/gundo.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'godlygeek/tabular'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+"--------------
+" IDE features
+"--------------
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'humiaozuzu/TabBar'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+
+"-------------
+" Other Utils
+" ------------
+Bundle 'humiaozuzu/fcitx-status'
+Bundle 'nvie/vim-togglemouse'
+
+"----------------------------------------
+" Syntax/Indent for language enhancement
+"----------------------------------------
+" web backend
+Bundle '2072/PHP-Indenting-for-VIm'
+"Bundle 'tpope/vim-rails'
+Bundle 'beyondwords/vim-jinja2'
+Bundle 'digitaltoad/vim-jade'
+
+" web front end
+Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-haml'
+Bundle 'nono/jquery.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+"Bundle 'groenewege/vim-less'
+"Bundle 'wavded/vim-stylus'
+"
+" markup language
+Bundle 'tpope/vim-markdown'
+
+" Ruby
+"Bundle 'tpope/vim-endwise'
+
+" Scheme
+"Bundle 'kien/rainbow_parentheses.vim'
+
+"--------------
+" Color Scheme
+"--------------
+Bundle 'rickharris/vim-blackboard'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+Bundle 'rickharris/vim-monokai'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'Lokaltog/vim-distinguished'
+
+" ----------------------------------------------------------------------
+
+filetype plugin indent on     " 必须的
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..filetype off
+" ----------------------------------------------------------------------
+
 set modelines=0
 "不使用modelines
 set number
@@ -69,7 +183,7 @@ set guifont=Microsoft\ YaHei\ Mono:h14
 "设置双字节字体
 set linespace=2
 "设置行高
-colorscheme molokai
+color molokai
 "设置颜色主题
 "set lines=50 columns=128
 "设置macvim窗口大小
@@ -106,66 +220,6 @@ let NERDTreeWinPos='left'  "窗口位置
 let NERDTreeWinSize=25   "窗口宽
 nnoremap <silent><leader>nn :NERDTreeToggle<CR>
 "映射\nn为NERDTreeToggle快捷键，普通模式下文件窗口有效
-
-"ultrablog-vim插件
-let ub_blog = {'login_name':'',
-            \'password':'',
-            \'url':'http://evsseny.appspot.com/rpc',
-            \'db':'~/.vim/UltraBlog.db'
-            \}
- 
-" Default page size of local post list, see :help ub_local_pagesize for more information
-let ub_local_pagesize = 30
- 
-" Default page size of remote post list, see :help ub_remote_pagesize for more information
-let ub_remote_pagesize = 15
- 
-" Default page size of search result list, see :help ub_search_pagesize for more information
-let ub_search_pagesize = 30
- 
-" Proudly show your visitors that you are blogging with the world's most powerful editor
-let ub_append_promotion_link = 1
- 
-" Set width of the local id column in post or page lists
-let ub_list_col1_width = 7
- 
-" Set width of the remote id column in post or page lists
-let ub_list_col2_width = 8
- 
-" Set width of the status column in post or page lists
-let ub_list_col3_width = 11
- 
-" Set this value to 1 if you want to use editor mode.
-let ub_editor_mode = 0
- 
-" Set this value to 1 if you want to save posts/pages immediately after they are fetched from the blog.
-let ub_save_after_opened = 0
- 
-" Set this value to 0 if you do not want to save posts/pages immediately after they are sent to the blog.
-let ub_save_after_sent = 1
- 
-" Set the following options to use a custom extenal command as the converter.
-let ub_converter_command = 'pandoc'
-let ub_converter_options = ['--reference-links']
-let ub_converter_option_from = '--from=%s'
-let ub_converter_option_to = '--to=%s'
- 
-" Customize hotkeys
-let ub_hotkey_open_item_in_current_view='<enter>'
-let ub_hotkey_open_item_in_splitted_view='<s-enter>'
-let ub_hotkey_open_item_in_tabbed_view='<c-enter>'
-let ub_hotkey_delete_item='<del>'
- 
-" Set the link template string for images uploaded by :UBUpload
-let ub_tmpl_img_url="markdown###![$(file)s][]\n[$(file)s]:%(url)s"
- 
-" Set the default template to use when previewing posts/pages locally
-let ub_default_template="default"
-
-"UltraBlog.vim
-if filereadable($HOME . '/.UltraBlog.vim.conf')
-    source $HOME/.UltraBlog.vim.conf
-endif
 
 "neocomplacache插件
 let g:neocomplcache_enable_at_startup=1

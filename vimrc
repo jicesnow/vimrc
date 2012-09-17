@@ -1,11 +1,125 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-"pathogen插件
-"filetype plugin indent on
-"开启插件
-set nocompatible
-"不兼容vi模式
+set nocompatible  
+"设置 vim 为不兼容vi模式
+filetype off      
+"必须的
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+ 
+"让 Vundle 管理 Vundle
+"必须的
+Bundle 'gmarik/vundle'
+ 
+" 不同代码源上的vim插件的安装和管理方法
+"
+" 代码源在github上的
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-rails.git'
+" 代码源在vim-scripts上的
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" 代码源放在其他地方的
+" Bundle 'git://git.wincent.com/command-t.git'
+" ...
+ 
+"------------------
+" Code Completions
+"------------------
+Bundle 'Shougo/neocomplcache'
+Bundle 'garbas/vim-snipmate'
+Bundle 'ervandew/supertab'
+Bundle 'honza/snipmate-snippets'
+Bundle 'mattn/zencoding-vim'
+" snipmate dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+
+"-----------------
+" Fast navigation
+"-----------------
+Bundle 'tsaleh/vim-matchit'
+Bundle 'Lokaltog/vim-easymotion'
+
+"--------------
+" Fast editing
+"--------------
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'sjl/gundo.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'godlygeek/tabular'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+"--------------
+" IDE features
+"--------------
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'humiaozuzu/TabBar'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+
+"-------------
+" Other Utils
+" ------------
+Bundle 'humiaozuzu/fcitx-status'
+Bundle 'nvie/vim-togglemouse'
+
+"----------------------------------------
+" Syntax/Indent for language enhancement
+"----------------------------------------
+" web backend
+Bundle '2072/PHP-Indenting-for-VIm'
+"Bundle 'tpope/vim-rails'
+Bundle 'beyondwords/vim-jinja2'
+Bundle 'digitaltoad/vim-jade'
+
+" web front end
+Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-haml'
+Bundle 'nono/jquery.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+"Bundle 'groenewege/vim-less'
+"Bundle 'wavded/vim-stylus'
+"
+" markup language
+Bundle 'tpope/vim-markdown'
+
+" Ruby
+"Bundle 'tpope/vim-endwise'
+
+" Scheme
+"Bundle 'kien/rainbow_parentheses.vim'
+
+"--------------
+" Color Scheme
+"--------------
+Bundle 'rickharris/vim-blackboard'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+Bundle 'rickharris/vim-monokai'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'Lokaltog/vim-distinguished'
+
+" ----------------------------------------------------------------------
+
+filetype plugin indent on     " 必须的
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..filetype off
+" ----------------------------------------------------------------------
+
 set modelines=0
 "不使用modelines
 set number
@@ -69,7 +183,7 @@ set guifont=Microsoft\ YaHei\ Mono:h14
 "设置双字节字体
 set linespace=2
 "设置行高
-colorscheme molokai
+color molokai
 "设置颜色主题
 "set lines=50 columns=128
 "设置macvim窗口大小
